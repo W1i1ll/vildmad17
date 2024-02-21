@@ -1,0 +1,240 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: CreatoDisplay;
+  src: url(fonts/CreatoDisplay-Regular.woff2);
+}
+
+@font-face {
+  font-family: Super_enjoy;
+  src: url(fonts/Super_enjoy.woff2);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #deb880;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header_logo img {
+  width: 192px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: end;
+}
+
+.menu a:hover {
+  color: #708e60;
+}
+
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger .line {
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+}
+.burger {
+  display: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Sørger for, at siden fylder mindst hele viewportens højde */
+}
+
+/************* footer ************/
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #282828;
+  padding-right: 6rem;
+  padding-left: 6rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: auto; /* Placerer footeren i bunden af viewporten */
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  font-family: CreatoDisplay;
+}
+
+.footer_logo {
+  width: 100px;
+}
+
+.grid_footer li {
+  padding: 10px;
+}
+
+.grid_footer li a {
+  text-decoration: none;
+  color: white;
+}
+
+.grid_footer li a:hover {
+  color: #708e60;
+}
+
+/* BURGER */
+
+.burger {
+  width: 37px;
+  height: 25px;
+  cursor: pointer;
+  margin-top: 5%;
+  margin-left: 5%;
+  z-index: 1000;
+  position: relative;
+  position: relative;
+}
+
+/* burger mobil og menulinje */
+
+.burger .line {
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+  justify-content: left;
+}
+.burger {
+  display: none;
+  justify-content: left;
+}
+@media screen and (max-width: 800px) {
+  .menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+  }
+
+  nav.active .menu {
+    display: block;
+    background-color: #324536;
+    background-image: url(images/pattern.svg);
+    background-size: 25%;
+    background-blend-mode: soft-light;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    padding-bottom: 469%;
+    padding-top: 28%;
+    margin-top: 9%;
+  }
+
+  nav.active .menu li {
+    margin: 10px 20px;
+    text-align: center;
+  }
+
+  nav.active .menu a {
+    font-size: 34px;
+    margin-top: -2%;
+    color: white;
+    font-family: "super_enjoy";
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.facebook_social img,
+.instagram_social img {
+  width: 50px;
+}
+
+.facebook_social img:hover,
+.instagram_social img:hover {
+  opacity: 0.5;
+}
+
+@media (max-width: 800px) {
+  footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .footer_logo img {
+    width: 100px;
+  }
+}
